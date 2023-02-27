@@ -1,0 +1,62 @@
+.main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -60%);
+}
+
+.title-heading {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    margin: 4.8vh;
+
+    .language-heading {
+        color: var(--grey60);
+        font-size: 0.8vw;
+        margin: 0;
+
+        &.selected {
+            color: #4BAEE7;
+            font-size: 3.2vw;
+        }
+    }
+}
+
+.flags-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 40vw;
+
+    .flag-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            border: 8px solid var(--grey00);
+            border-radius: 0.8vw;
+
+            cursor: pointer;
+            object-fit: cover;
+
+            width: 10vw;
+            height: 12vh;
+
+            &:hover {
+                transition: transform .6s;
+                transform: scale(1.1);
+            }
+        }
+
+        p {
+            color: var(--grey00);
+            font-size: 1.2vw;
+        }
+    }
+}

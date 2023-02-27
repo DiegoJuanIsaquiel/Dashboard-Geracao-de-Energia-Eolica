@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+/** Css **/
+
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: 0;
+}
+
+html {
+    font-size: 10px !important;
+
+    @media (max-width: 768px) {
+        overflow-y: scroll;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: unset;
+        background-color: var(--background-color);
+        color: var(--grey00);
+
+        overflow: auto;
+
+        min-height: unset !important;
+        min-width: unset !important;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    min-height: unset !important;
+    min-width: unset !important;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --background-color: #141419;
+    --primary-color: #191A21;
+    --grey80: #1F2128;
+    --grey60: #40444B;
+    --grey40: #6A6D76;
+    --grey20: #8D9197;
+    --grey00: #F2F2F2;
+}
