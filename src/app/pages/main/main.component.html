@@ -1,14 +1,14 @@
 <div class="main">
     <div class="title-heading" [style.flex-direction]="selectedLanguage === languagesEnum.ENGLISH ? 'column-reverse' : 'column'">
         <h2 class="language-heading" [class.selected]="selectedLanguage === languagesEnum.PORTUGUESE">Qual seu idioma?</h2>
-        <h2 class="language-heading" [class.selected]="selectedLanguage === languagesEnum.ENGLISH">Whats your language?</h2>
+        <h2 class="language-heading" [class.selected]="selectedLanguage === languagesEnum.ENGLISH">What's your language?</h2>
     </div>
     <div class="flags-container">
-        <div class="flag-item" (mouseover)="selectedLanguage = languagesEnum.ENGLISH">
+        <a class="flag-item" (mouseover)="selectedLanguage = languagesEnum.ENGLISH" routerLink="home/en">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/27_Star_US_Flag.svg" />
             <p>English</p>
-        </div>
-        <div class="flag-item" (mouseover)="selectedLanguage = languagesEnum.PORTUGUESE">
+        </a>
+        <div class="flag-item" (mouseover)="selectedLanguage = languagesEnum.PORTUGUESE" routerLink="home/pt">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" />
             <p>Português</p>
         </div>

@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title = 'diegoisaquiel-web-portfolio';
+  title = 'Diego Juan Isaquiel - Portfolio';
 }

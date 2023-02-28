@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
+import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
+import { FooterModule } from 'src/app/components/footer/footer.module';
+import { NavbarModule } from 'src/app/components/navbar/navbar.module';
 
 export const routes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: HomeComponent
   },
-  { path: 'home/:language', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    NavbarModule,
+    FooterModule,
   ],
   declarations: [
-    MainComponent
+    HomeComponent
   ],
   exports: [
-    MainComponent
+    HomeComponent
   ]
 })
-export class MainModule { }
+export class HomeModule { }

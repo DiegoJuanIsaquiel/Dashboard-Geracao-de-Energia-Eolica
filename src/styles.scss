@@ -1,6 +1,12 @@
 /** Css **/
 
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+@font-face{
+    font-family:"Helvetica Neue";
+    src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
+    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
+}
+
 
 * {
     box-sizing: border-box;
@@ -42,6 +48,11 @@ a {
 :root {
     --background-color: #141419;
     --primary-color: #191A21;
+
+    --dark-secondary-color: #2C71B6;
+    --default-secondary-color: #4993DB;
+    --light-secondary-color: #4BAEE7;
+
     --grey80: #1F2128;
     --grey60: #40444B;
     --grey40: #6A6D76;
