@@ -1,1 +1,25 @@
-<p>navbar works!</p>
+<div class="main">
+    <div class="left-content">
+        <h1>LOGO</h1>
+    </div>
+    <div class="middle-content">
+        <div class="link-item">
+            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Sobre mim' : 'About me'}}</p>
+        </div>
+        <div class="link-item">
+            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Habilidades' : 'Skills'}}</p>
+        </div>
+        <div class="link-item">
+            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Portfólio' : 'Portfolio'}}</p>
+        </div>
+        <div class="link-item">
+            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Contato' : 'Contact'}}</p>
+        </div>
+    </div>
+    <div class="right-content">
+        <button nbButton>
+            <nb-icon icon="paper-plane-outline" pack="eva"></nb-icon>
+            {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Fale Comigo!' : 'Talk to me!'}}
+        </button>
+    </div>
+</div>

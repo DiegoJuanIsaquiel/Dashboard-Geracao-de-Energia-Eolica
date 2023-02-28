@@ -1,12 +1,6 @@
 /** Css **/
 
-@font-face{
-    font-family:"Helvetica Neue";
-    src:url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("woff"),
-    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("opentype"),
-    url("https://candyfonts.com/wp-data/2018/10/26/11538/HELR45W.ttf") format("truetype");
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -22,7 +16,7 @@ html {
     }
 
     body {
-        font-family: 'Helvetica Neue', sans-serif;
+        font-family: 'Lexend', sans-serif;
         font-size: unset;
         background-color: var(--background-color);
         color: var(--grey00);
