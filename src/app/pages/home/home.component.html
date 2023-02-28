@@ -2,8 +2,32 @@
     <app-navbar></app-navbar>
 </section>
 
-<p>Olá mundo</p>
+<section class="hero-section">
+    <div class="left-content">
+        <div class="title-container">
+            <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Seja bem-vindo(a)!' : 'Welcome'}}</h3>
+            <h1>
+                {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Meu nome é' : 'Im'}}
+                <span>Diego Isaquiel</span> {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'e sou' : 'and I am'}}
+                <span>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Desenvolvedor Front-end' : 'Front-end Developer'}}</span>
+            </h1>
+            <h4>
+                {{ selectedLanguage === languagesEnum.PORTUGUESE ?
+                'Explore meu portfólio e descubra uma coleção de projetos criativos que mostram minhas habilidades e paixão pela arte, design e desenvolvimento. Fique à vontade para navegar e conhecer mais sobre meu trabalho.' :
+                'Explore my portfolio and discover a collection of creative projects that showcase my skills and passion for art, design, and development. Feel free to browse and learn more about my work.'}}
+            </h4>
+        </div>
+        <div class="button-container">
+            <button>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Saiba mais' : 'See more'}}</button>
+            <a href="#">{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Veja meu Curriculum Vitae' : 'Download CV'}}</a>
+        </div>
+    </div>
+    <div class="right-content">
+        <img src="../../../assets/diego_isaquiel_developer_image.png">
+        <div class="background-shape"></div>
+    </div>
+</section>
 
-<footer>
+<!-- <footer>
     <app-footer></app-footer>
-</footer>
+</footer> -->
