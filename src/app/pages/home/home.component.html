@@ -78,7 +78,50 @@
     </div>
 
     <div class="right-content">
-        <p>Vou pensar no que vou fazer</p>
+        <div class="skill-box vertical">
+            <div class="heading">
+                <div class="icon">
+                    <nb-icon icon="globe-outline"></nb-icon>
+                </div>
+                <h4>Web app</h4>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+            </div>
+        </div>
+        <div class="skill-box horizontal">
+            <div class="heading">
+                <div class="icon">
+                    <nb-icon icon="smartphone-outline"></nb-icon>
+                </div>
+                <h4>Mobile app</h4>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+            </div>
+        </div>
+        <div class="skill-box horizontal">
+            <div class="heading">
+                <div class="icon">
+                    <nb-icon icon="layers-outline"></nb-icon>
+                </div>
+                <h4>UI/UX Design</h4>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+            </div>
+        </div>
+        <div class="skill-box vertical">
+            <div class="heading">
+                <div class="icon">
+                    <nb-icon icon="layout-outline"></nb-icon>
+                </div>
+                <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Prototipagem e' : 'Prototyping and'}} Wireframing</h4>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -104,6 +147,115 @@
         <ng-container>
             <app-project-card></app-project-card>
         </ng-container>
+    </div>
+</section>
+
+<section class="soft-skills-section">
+    <div class="title-centered">
+        <h3>Soft Skills</h3>
+    </div>
+    <div class="skills-container">
+        <div class="skill-item">
+            <div class="icon-box">
+                <nb-icon icon="message-circle-outline"></nb-icon>
+            </div>
+            <div class="text-description">
+                <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Comunicativo' : 'Communicative'}}</h4>
+                <p>
+                    {{ selectedLanguage === languagesEnum.PORTUGUESE ?
+                        'Gosto de encontrar maneiras criativas de me comunicar e transmitir ideias.' :
+                        'I enjoy finding creative ways to communicate and convey my ideas.'}}
+                </p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="icon-box">
+                <nb-icon icon="activity-outline"></nb-icon>
+            </div>
+            <div class="text-description">
+                <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Flexível' : 'Flexible'}}</h4>
+                <p>
+                    {{ selectedLanguage === languagesEnum.PORTUGUESE ?
+                        'Sou uma pessoa versátil, capaz de atuar em diferentes áreas e projetos.' :
+                        'I am a versatile person, able to work in different areas and projects.'}}
+                </p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="icon-box">
+                <nb-icon icon="people-outline"></nb-icon>
+            </div>
+            <div class="text-description">
+                <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Colaborativo' : 'Collaborative'}}</h4>
+                <p>
+                    {{ selectedLanguage === languagesEnum.PORTUGUESE ?
+                        'Sou capaz de trabalhar em conjunto com diferentes perfis profissionais' :
+                        'I am able to work together with different professional profiles.'}}
+                </p>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="icon-box">
+                <nb-icon icon="bulb-outline"></nb-icon>
+            </div>
+            <div class="text-description">
+                <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Criativo' : 'Creative'}}</h4>
+                <p>
+                    {{ selectedLanguage === languagesEnum.PORTUGUESE ?
+                        'A criatividade me permite agregar valor e originalidade aos projetos.' :
+                        'My creativity allows me to add value and originality to projects.'}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else ctaEnglishMessage">
+        <h3> Vamos trabalhar juntos?</h3>
+        <p>Estou animado para trabalhar em conjunto, acreditando que somando forças, alcançaremos o sucesso!</p>
+    </div>
+    <ng-template #ctaEnglishMessage>
+        <h3>Lets work together</h3>
+        <p>I'm excited to work together, believing that by joining forces, we will achieve success.</p>
+    </ng-template>
+</section>
+
+<section class="contact-section">
+    <div class="left-content">
+        <div class="contact-item">
+            <div class="icon-box">
+                <nb-icon icon="phone" pack="eva"></nb-icon>
+            </div>
+            <div class="text-container">
+                <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Ligue' : 'Call me'}}</h3>
+                <p>+55(15) 99646-2437 / +55(15) 99131-5336</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="icon-box">
+                <nb-icon icon="inbox" pack="eva"></nb-icon>
+            </div>
+            <div class="text-container">
+                <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Envie uma mensagem' : 'Mail me'}}</h3>
+                <p>contato@diegoisaquiel.dev.com</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right-content">
+        <form class="form-container">
+            <input type="text" [placeholder]="selectedLanguage === languagesEnum.PORTUGUESE ? 'Digite seu nome' : 'Enter your name'">
+            <input type="email" [placeholder]="selectedLanguage === languagesEnum.PORTUGUESE ? 'Digite seu e-mail' : 'Enter your email'">
+            <textarea   type="text"
+                        [placeholder]="selectedLanguage === languagesEnum.PORTUGUESE ? 'Escreva sua mensagem...' : 'Write your message...'"
+                        ></textarea>
+
+            <button type="submit">
+                {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Enviar' : 'Submit'}}
+            </button>
+        </form>
     </div>
 </section>
 
