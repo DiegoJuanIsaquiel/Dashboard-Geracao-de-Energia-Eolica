@@ -75,14 +75,14 @@
     }
   }
 
-  .right-content{
+  .right-content {
     position: relative;
 
-    img{
+    img {
       width: 16vw;
     }
 
-    .background-shape{
+    .background-shape {
       border-radius: 8vw 0.3vw 0.3vw 0.3vw;
 
       width: 18vw;
@@ -96,7 +96,7 @@
 
       z-index: -1;
 
-      &::before{
+      &::before {
         content: '';
 
         background: var(--light-secondary-color);
@@ -112,12 +112,123 @@
 
 }
 
-app-footer {
-  position: absolute;
-  bottom: 0;
+.about-me-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 6.4vw;
+
+  .left-content {
+    width: 45%;
+
+    .text-paragraph {
+      font-size: 1vw;
+    }
+
+    .skills {
+      h4 {
+        color: var(--light-secondary-color);
+        font-size: 1.2vw;
+        margin: 3.2vh 0;
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+        gap: 0.8vw;
+      }
+
+      .skill-item img {
+        border-radius: 0.6vw;
+        width: 3.2vw;
+
+        &#figma,
+        &#nestJs,
+        &#angular {
+          background: var(--primary-color);
+          padding: 0.6vw;
+        }
+      }
+    }
+  }
+
+}
+
+.portfolio-section {
+  padding: 3.2vw 6.4vw;
+
+  .navigation-bar{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 1fr;
+    align-items: center;
+    gap: 1.2vw;
+
+    font-size: 1vw;
+
+    h4{
+      cursor: pointer;
+      margin: 0;
+
+      &.selected{
+        color: var(--light-secondary-color);
+      }
+
+      &:last-child{
+        color: var(--light-secondary-color);
+        justify-self: end;
+        font-weight: 400;
+
+        position: relative;
+
+        &:hover:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -0.4vh;
+          width: 0;
+          border-bottom: solid 2px var(--light-secondary-color);
+          animation: border_anim 0.4s linear forwards;
+        }
+      }
+    }
+  }
+
+  .projects-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 1.8vw;
+
+    padding: 2.4vw 0;
+  }
+}
+
+section {
+  .title-heading {
+    position: relative;
+
+    h3 {
+      color: var(--light-secondary-color);
+      font-size: 1.8vw;
+    }
+
+    &::before {
+      content: '';
+
+      background-color: var(--light-secondary-color);
+      border-radius: 0.1vw;
+
+      position: absolute;
+      top: -3vh;
+
+      width: 5%;
+      height: 0.6vw;
+    }
+  }
+}
+
+app-footer {
   width: 100VW;
-  margin-top: 63vw;
 
   z-index: 10;
 }

@@ -11,11 +11,18 @@
                 <span>Diego Isaquiel</span> {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'e sou' : 'and I am'}}
                 <span>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Desenvolvedor Front-end' : 'Front-end Developer'}}</span>
             </h1>
-            <h4>
-                {{ selectedLanguage === languagesEnum.PORTUGUESE ?
-                'Explore meu portfólio e descubra uma coleção de projetos criativos que mostram minhas habilidades e paixão pela arte, design e desenvolvimento. Fique à vontade para navegar e conhecer mais sobre meu trabalho.' :
-                'Explore my portfolio and discover a collection of creative projects that showcase my skills and passion for art, design, and development. Feel free to browse and learn more about my work.'}}
-            </h4>
+            <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else englishHeroParagraph">
+                <h4>
+                    Explore meu portfólio e descubra uma coleção de projetos criativos que mostram minhas habilidades e paixão pela arte, design e desenvolvimento.
+                    Fique à vontade para navegar e conhecer mais sobre meu trabalho.
+                </h4>
+            </div>
+            <ng-template #englishHeroParagraph>
+                <h4>
+                    Explore my portfolio and discover a collection of creative projects that showcase my skills and passion for art, design, and development.
+                    Feel free to browse and learn more about my work.
+                </h4>
+            </ng-template>
         </div>
         <div class="button-container">
             <button>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Saiba mais' : 'See more'}}</button>
@@ -28,6 +35,78 @@
     </div>
 </section>
 
-<!-- <footer>
+<section class="about-me-section">
+    <div class="left-content">
+        <div class="title-heading">
+            <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Sobre mim' : 'About me'}}</h3>
+        </div>
+        <div class="text-paragraph">
+            <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else englishAboutMeParagraph">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam reprehenderit odio hic consequuntur quia cumque molestiae
+                vero maxime non harum, saepe eius libero, praesentium labore ex, laborum quae sunt omnis!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam reprehenderit odio hic consequuntur quia cumque molestiae
+                vero maxime non harum, saepe eius libero, praesentium labore ex, laborum quae sunt omnis!
+            </div>
+            <ng-template #englishAboutMeParagraph>
+                English
+            </ng-template>
+        </div>
+        <div class="skills">
+            <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Minhas habilidades' : 'My skills'}}</h4>
+
+            <div class="skills-container">
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="Typescript" id="typescript"/>
+                </div>
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular Framework"  id="angular"/>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" alt="NestJs"  id="nestJs"/>
+                </div>
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Adobe Photoshop"  id="photoshop"/>
+                </div>
+                <div class="skill-item">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Adobe Illustrator"  id="illustrator"/>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"  id="figma"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <p>Vou pensar no que vou fazer</p>
+    </div>
+</section>
+
+<section class="portfolio-section">
+    <div class="title-heading">
+       <h3> {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Meu Portfólio' : 'My Portfolio'}} </h3>
+    </div>
+    <div class="navigation-bar">
+        <h4 class="navigation-item selected">
+            {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Aplicações web' : 'Web applications'}}
+        </h4>
+        <h4 class="navigation-item">
+            {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Aplicações Mobile' : 'Mobile applications'}}
+        </h4>
+        <h4 class="navigation-item">
+            UI / UX Design
+        </h4>
+        <h4 class="navigation-item">
+            {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Ver mais' : 'View More'}}
+        </h4>
+    </div>
+    <div class="projects-container">
+        <ng-container>
+            <app-project-card></app-project-card>
+        </ng-container>
+    </div>
+</section>
+
+<footer>
     <app-footer></app-footer>
-</footer> -->
+</footer>
