@@ -60,3 +60,35 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+
+    .title-heading {
+        margin: 4.4vh 0;
+        width: 100vw;
+
+        .language-heading {
+            font-size: 3.8vw;
+
+            &.selected {
+                font-size: 7.2vw;
+            }
+        }
+    }
+
+    .flags-container {
+        flex-direction: column;
+        width: 100%;
+
+        .flag-item {
+            img {
+                border: 2vw solid var(--grey00);
+                width: 47vw;
+            }
+
+            p {
+                font-size: 4.4vw;
+            }
+        }
+    }
+}

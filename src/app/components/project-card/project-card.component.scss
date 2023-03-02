@@ -29,12 +29,12 @@
         }
     }
 
-    .tags-list{
+    .tags-list {
         display: grid;
         grid-template-columns: auto auto auto;
         column-gap: 0.4vw;
 
-        p{
+        p {
             background-color: #dd1b16;
             border-radius: 0.4vw;
 
@@ -46,7 +46,7 @@
         }
     }
 
-    .description{
+    .description {
         font-size: 0.6vw;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -56,14 +56,14 @@
         -webkit-box-orient: vertical;
     }
 
-    .buttons-container{
+    .buttons-container {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         margin: 1.2vw 0;
 
-        button{
+        button {
             border: none;
             border-radius: 0.4vw;
             padding: 0.6vw 1.2vw;
@@ -73,16 +73,65 @@
             font-family: 'Lexend', sans-serif;
             font-size: 0.7vw;
 
-            &.filled{
+            &.filled {
                 background: var(--light-secondary-color);
                 color: #F2F2F2;
             }
 
-            &.outline{
+            &.outline {
                 background: none;
                 border: 2px solid var(--light-secondary-color);
                 color: var(--light-secondary-color);
             }
         }
     }
+}
+
+@media screen and (max-width: 787px) {
+    .main {
+        border-radius: 1.8vw;
+        padding: 2.4vw;
+
+        width: 45vw;
+
+        .image-container img {
+            border-radius: 1.4vw;
+
+            width: 40vw;
+            height: 23.2vw;
+        }
+
+        .title-project {
+            margin: 0.4vw 0;
+
+            h3 {
+                font-size: 2.4vw;
+            }
+        }
+
+        .tags-list {
+            column-gap: 1.4vw;
+
+            p {
+                font-size: 1.8vw;
+            }
+        }
+
+        .description {
+            font-size: 1.8vw;
+            margin: 1.8vw  0;
+        }
+
+        .buttons-container {
+            margin: 3.2vw 0;
+
+            button {
+                border-radius: 1.2vw;
+                padding: 1.8vw 4.2vw;
+
+                font-size: 1.8vw;
+            }
+        }
+    }
+
 }
