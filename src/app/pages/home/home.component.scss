@@ -45,6 +45,7 @@
         cursor: pointer;
         color: var(--light-secondary-color);
         font-weight: 600;
+        font-size: 0.8vw;
 
         padding: 1.4vh 1.8vw;
 
@@ -196,7 +197,13 @@
       }
 
       &:nth-child(2){
-        margin-top: 5vw;
+        margin-top: 4vw;
+        height: 15.6vw;
+      }
+
+      &:nth-child(3){
+        margin-top: -3.6vw;
+        height: 14vw;
       }
 
     }

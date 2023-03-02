@@ -42,13 +42,24 @@
         </div>
         <div class="text-paragraph">
             <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else englishAboutMeParagraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam reprehenderit odio hic consequuntur quia cumque molestiae
-                vero maxime non harum, saepe eius libero, praesentium labore ex, laborum quae sunt omnis!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam reprehenderit odio hic consequuntur quia cumque molestiae
-                vero maxime non harum, saepe eius libero, praesentium labore ex, laborum quae sunt omnis!
+                Olá, meu nome é Diego Isaquiel, sou um desenvolvedor front-end e sou um profissional em busca de desafios e oportunidades de crescimento.
+                Desde cedo, sempre fui apaixonado por tecnologia e como ela pode mudar a vida das pessoas. Foi essa paixão que me levou a estudar programação e
+                a buscar experiências em empresas de tecnologia.<br><br>
+                Ao longo dos anos, desenvolvi habilidades em diferentes áreas da tecnologia, incluindo design gráfico, desenvolvimento de softwares, UX/UI design e outras.
+                Mas além das habilidades técnicas, também sou uma pessoa comunicativa e colaborativa, sempre disposta a ajudar minha equipe a alcançar seus objetivos. Minha criatividade
+                me permite encontrar soluções inovadoras para problemas e agregar valor aos projetos.<br><br>
+                Atualmente estou cursando Engenharia de Computação no Centro Universitário Facens em Sorocaba - SP e meus objetivos profissionais
+                estão relacionados ao crescimento pessoal e profissional, sempre buscando aprender e aprimorar minhas habilidades.
             </div>
             <ng-template #englishAboutMeParagraph>
-                English
+                Hello, my name is Diego Isaquiel, I am a front-end developer and a professional who is seeking challenges and growth opportunities.
+                Since an early age, I have always been passionate about technology and how it can change people's lives. It was this passion that led me to study programming
+                and to seek experiences in technology companies.<br><br>
+                Over the years, I have developed skills in different areas of technology, including graphic design, software development, UX/UI design, and others.
+                But in addition to technical skills, I am also a communicative and collaborative person, always willing to help my team achieve their goals. My creativity
+                allows me to find innovative solutions to problems and add value to projects.<br><br>
+                Currently, I am pursuing a degree in Computer Engineering at Facens University Center in Sorocaba - SP and my professional goals
+                are related to personal and professional growth, always seeking to learn and improve my skills.
             </ng-template>
         </div>
         <div class="skills">
@@ -86,7 +97,14 @@
                 <h4>Web app</h4>
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+                <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else webAppEnglishDescription">
+                    <p>Tenho experiência com desenvolvimento de sites e aplicações web utilizando linguagens com HTML, CSS e JavaScript, bem como em frameworks como Angular e React,
+                        desenvolvo soluções que atendem às necessidades dos usuários e dos negócios</p>
+                </div>
+                <ng-template #webAppEnglishDescription>
+                    <p>I have experience with developing websites and web applications using languages such as HTML, CSS and JavaScript, as well as in frameworks such as Angular and React,
+                        I develop solutions that meet the needs of users and businesses</p>
+                </ng-template>
             </div>
         </div>
         <div class="skill-box horizontal">
@@ -97,7 +115,14 @@
                 <h4>Mobile app</h4>
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+                <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else mobileAppEnglishDescription">
+                    <p>Tenho experiência no desenvolvimento de aplicativos móveis para Android e iOS. Sou capaz de criar interfaces de usuário atraentes e funcionais,
+                        além de implementar recursos avançados, como integração com APIs, e notificações push. Também tenho conhecimento em tecnologias como Ionic e React Native.</p>
+                </div>
+                <ng-template #mobileAppEnglishDescription>
+                    <p>I have experience in developing mobile apps for Android and iOS. I can create attractive and functional user interfaces and implement advanced
+                        features such as API integration and push notifications. I also have knowledge in technologies like Ionic and React Native.</p>
+                </ng-template>
             </div>
         </div>
         <div class="skill-box horizontal">
@@ -108,7 +133,17 @@
                 <h4>UI/UX Design</h4>
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+                <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else uiUXEnglishDescription">
+                    <p>
+                        Tenho experiência em design de interface do usuário (UI) e experiência do usuário (UX). Trabalhei em projetos que envolviam criação de
+                        protótipos, testes com usuários e melhoria da usabilidade de aplicativos e sites.
+                    </p>
+                </div>
+                <ng-template #uiUXEnglishDescription>
+                    <p>I have experience in user interface (UI) and user experience (UX) design. I worked on projects involving prototyping, user testing and
+                        improving the usability of apps and websites.
+                    </p>
+                </ng-template>
             </div>
         </div>
         <div class="skill-box vertical">
@@ -119,7 +154,15 @@
                 <h4>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Prototipagem e' : 'Prototyping and'}} Wireframing</h4>
             </div>
             <div class="description">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis harum sunt, dicta aperiam eveniet minima officia sit magni vero dolore.</p>
+                <div *ngIf="selectedLanguage === languagesEnum.PORTUGUESE; else prototypingEnglishDescription">
+                    <p>Como desenvolvedor de UI/UX, tenho experiência em criar protótipos e wireframes para diversos projetos. Utilizo o Figma para desenvolver
+                        protótipos interativos que permitem validar e testar soluções de design antes da implementação final.
+                    </p>
+                </div>
+                <ng-template #prototypingEnglishDescription>
+                    <p>As a UI/UX developer, I have experience creating prototypes and wireframes for several projects. I use Figma to develop interactive prototypes
+                        that allow me to validate and test design solutions before final implementation.</p>
+                </ng-template>
             </div>
         </div>
     </div>
@@ -216,7 +259,7 @@
         <p>Estou animado para trabalhar em conjunto, acreditando que somando forças, alcançaremos o sucesso!</p>
     </div>
     <ng-template #ctaEnglishMessage>
-        <h3>Lets work together</h3>
+        <h3>Let's work together</h3>
         <p>I'm excited to work together, believing that by joining forces, we will achieve success.</p>
     </ng-template>
 </section>
