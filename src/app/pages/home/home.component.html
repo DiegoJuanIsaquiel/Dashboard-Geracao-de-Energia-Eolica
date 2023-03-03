@@ -1,8 +1,8 @@
 <section class="section-navbar">
-    <app-navbar></app-navbar>
+    <app-navbar (navbarEmitter)="scrollToElement($event)"></app-navbar>
 </section>
 
-<section class="hero-section">
+<section class="hero-section" id="heroSection">
     <div class="left-content">
         <div class="title-container">
             <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Seja bem-vindo(a)!' : 'Welcome'}}</h3>
@@ -35,7 +35,7 @@
     </div>
 </section>
 
-<section class="about-me-section">
+<section class="about-me-section" id="aboutMeSection">
     <div class="left-content">
         <div class="title-heading">
             <h3>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Sobre mim' : 'About me'}}</h3>
@@ -168,7 +168,7 @@
     </div>
 </section>
 
-<section class="portfolio-section">
+<section class="portfolio-section" id="portfolioSection">
     <div class="title-heading">
        <h3> {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Meu Portfólio' : 'My Portfolio'}} </h3>
     </div>
@@ -190,28 +190,10 @@
         <ng-container>
             <app-project-card></app-project-card>
         </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
-        <ng-container>
-            <app-project-card></app-project-card>
-        </ng-container>
     </div>
 </section>
 
-<section class="soft-skills-section">
+<section class="soft-skills-section" id="skillsSection">
     <div class="title-centered">
         <h3>Soft Skills</h3>
     </div>
@@ -282,8 +264,11 @@
     </ng-template>
 </section>
 
-<section class="contact-section">
+<section class="contact-section" id="contactSection">
     <div class="left-content">
+        <h3 class="title-contact">
+            {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Entre em contato comigo!' : 'Contact me!'}}
+        </h3>
         <div class="contact-item">
             <div class="icon-box">
                 <nb-icon icon="phone" pack="eva"></nb-icon>

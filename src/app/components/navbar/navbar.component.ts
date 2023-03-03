@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguagesEnum } from 'src/app/models/enum/languages.enum';
 
@@ -26,11 +26,16 @@ export class NavbarComponent {
 
   //#region Public Properties
 
+  @Output()
+  public navbarEmitter: EventEmitter<string> = new EventEmitter<string>();
+
   public languagesEnum: typeof LanguagesEnum = LanguagesEnum
 
   public selectedLanguage: string | null = '';
 
   public isMouseOver: boolean = false;
+
+  public isNavbarOpen: boolean = false;
 
   //#endregion
 

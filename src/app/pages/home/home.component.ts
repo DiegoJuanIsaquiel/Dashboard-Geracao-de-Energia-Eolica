@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguagesEnum } from 'src/app/models/enum/languages.enum';
+import { ScrollService } from 'src/app/services/scroll-to-element/scroll-to-element.service';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
+    private readonly scrollService: ScrollService
   ) {
     this.selectedLanguage = this.route.snapshot.paramMap.get('language');
 
@@ -29,6 +31,14 @@ export class HomeComponent {
   public languagesEnum: typeof LanguagesEnum = LanguagesEnum
 
   public selectedLanguage: string | null = '';
+
+  //#endregion
+
+  //#region Public Methods
+
+  public scrollToElement(target: any): void {
+    this.scrollService.scrollToElementById(target);
+  }
 
   //#endregion
 }

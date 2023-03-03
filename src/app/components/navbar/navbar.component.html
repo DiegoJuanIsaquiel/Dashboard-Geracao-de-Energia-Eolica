@@ -3,23 +3,55 @@
         <h1>LOGO</h1>
     </div>
     <div class="middle-content">
-        <div class="link-item">
+        <div class="link-item" (click)="navbarEmitter.emit('aboutMeSection')">
             <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Sobre mim' : 'About me'}}</p>
         </div>
-        <div class="link-item">
-            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Habilidades' : 'Skills'}}</p>
-        </div>
-        <div class="link-item">
+        <div class="link-item" (click)="navbarEmitter.emit('portfolioSection')">
             <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Portfólio' : 'Portfolio'}}</p>
         </div>
-        <div class="link-item">
+        <div class="link-item" (click)="navbarEmitter.emit('skillsSection')">
+            <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Habilidades' : 'Skills'}}</p>
+        </div>
+        <div class="link-item" (click)="navbarEmitter.emit('contactSection')">
             <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Contato' : 'Contact'}}</p>
         </div>
     </div>
     <div class="right-content">
-        <button nbButton>
+        <button nbButton class="cta-button">
             <nb-icon icon="paper-plane-outline" pack="eva"></nb-icon>
             {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Fale Comigo!' : 'Talk to me!'}}
         </button>
+
+        <div class="nav-icon" (click)="isNavbarOpen = true" *ngIf="!isNavbarOpen">
+            <nb-icon icon="menu-outline" pack="eva"></nb-icon>
+        </div>
+
+
+        <div class="navbar-container" *ngIf="isNavbarOpen">
+            <div class="nav-icon" (click)="isNavbarOpen = false">
+                <nb-icon icon="close-outline" pack="eva"></nb-icon>
+            </div>
+
+            <div class="link-container" >
+                <div class="link-item" (click)="navbarEmitter.emit('aboutMeSection'); isNavbarOpen = false">
+                    <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Sobre mim' : 'About me'}}</p>
+                </div>
+                <div class="link-item" (click)="navbarEmitter.emit('portfolioSection'); isNavbarOpen = false">
+                    <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Portfólio' : 'Portfolio'}}</p>
+                </div>
+                <div class="link-item" (click)="navbarEmitter.emit('skillsSection'); isNavbarOpen = false">
+                    <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Habilidades' : 'Skills'}}</p>
+                </div>
+                <div class="link-item" (click)="navbarEmitter.emit('contactSection'); isNavbarOpen = false">
+                    <p>{{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Contato' : 'Contact'}}</p>
+                </div>
+            </div>
+
+            <button nbButton>
+                <nb-icon icon="paper-plane-outline" pack="eva"></nb-icon>
+                {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Fale Comigo!' : 'Talk to me!'}}
+            </button>
+        </div>
+
     </div>
 </div>

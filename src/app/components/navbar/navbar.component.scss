@@ -1,21 +1,17 @@
-.main{
+.main {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: 1.2vh 6.4vw;
 
-    .left-content{
-
-    }
-
-    .middle-content{
+    .middle-content {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 3.2vw;
 
-        .link-item{
+        .link-item {
             font-size: 1vw;
             font-weight: 600;
 
@@ -32,8 +28,8 @@
         }
     }
 
-    .right-content{
-        button{
+    .right-content {
+        button {
             background: none;
             border: 3px solid var(--grey00);
             border-radius: 0.6vw;
@@ -51,12 +47,12 @@
 
             padding: 0.8vh 0.6vw;
 
-            nb-icon{
+            nb-icon {
                 width: 1.4vw;
                 color: var(--grey00);
             }
 
-            &:hover{
+            &:hover {
                 background: var(--grey00);
                 color: var(--primary-color);
 
@@ -64,9 +60,90 @@
 
                 box-shadow: 0 0 3vw #F2F2F260;
 
-                nb-icon{
+                nb-icon {
                     color: var(--primary-color);
                     transition: 0.4s;
+                }
+            }
+        }
+
+        .navbar-container,
+        .nav-icon{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 787px) {
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 1.2vh 6.4vw;
+
+        .middle-content {
+            display: none;
+        }
+
+        .right-content {
+            .cta-button {
+                display: none;
+            }
+
+            .nav-icon {
+                display: block;
+                width: 7.2vw;
+            }
+
+            .navbar-container{
+                background: var(--primary-color);
+                box-shadow: 0 3vw 5vw var(--primary-color);
+
+                display: block;
+
+                width: 70vw;
+                height: 100vh;
+
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                padding: 4.8vw;
+
+                z-index: 15;
+
+                .nav-icon{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .link-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 1.2vw;
+
+                    margin: 4.8vh 0;
+
+                    .link-item p {
+                        font-size: 5.4vw;
+                        text-align: right;
+                    }
+                }
+
+                button {
+                    border-radius: 1.6vw;
+                    font-size: 3.2vw;
+                    padding: 1.4vh 10.24vw;
+
+                    gap: 4.4vw;
+
+                    margin-left: 4.4vw;
+
+                    nb-icon {
+                        width: 5.4vw;
+                    }
                 }
             }
         }
