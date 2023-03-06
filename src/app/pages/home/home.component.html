@@ -173,13 +173,19 @@
        <h3> {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Meu Portfólio' : 'My Portfolio'}} </h3>
     </div>
     <div class="navigation-bar">
-        <h4 class="navigation-item selected">
+        <h4 class="navigation-item"
+            [class.selected]="selectedCategory === categoryStateEnum.WEB_APP"
+            (click)="selectedCategory = categoryStateEnum.WEB_APP">
             {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Aplicações web' : 'Web applications'}}
         </h4>
-        <h4 class="navigation-item">
+        <h4 class="navigation-item"
+            [class.selected]="selectedCategory === categoryStateEnum.MOBILE_APP"
+            (click)="selectedCategory = categoryStateEnum.MOBILE_APP">
             {{ selectedLanguage === languagesEnum.PORTUGUESE ? 'Aplicações Mobile' : 'Mobile applications'}}
         </h4>
-        <h4 class="navigation-item">
+        <h4 class="navigation-item"
+            [class.selected]="selectedCategory === categoryStateEnum.UI_UX_APP"
+            (click)="selectedCategory = categoryStateEnum.UI_UX_APP">
             UI / UX Design
         </h4>
         <h4 class="navigation-item">
@@ -187,8 +193,14 @@
         </h4>
     </div>
     <div class="projects-container">
-        <ng-container>
-            <app-project-card></app-project-card>
+        <ng-container *ngIf="selectedCategory === categoryStateEnum.WEB_APP">
+            <app-project-card *ngFor="let item of webAppProjectList" [projectList]="item"></app-project-card>
+        </ng-container>
+        <ng-container  *ngIf="selectedCategory === categoryStateEnum.MOBILE_APP">
+            <app-project-card *ngFor="let item of mobileAppProjectList" [projectList]="item"></app-project-card>
+        </ng-container>
+        <ng-container  *ngIf="selectedCategory === categoryStateEnum.UI_UX_APP">
+            <app-project-card *ngFor="let item of uiUxProjectList" [projectList]="item"></app-project-card>
         </ng-container>
     </div>
 </section>

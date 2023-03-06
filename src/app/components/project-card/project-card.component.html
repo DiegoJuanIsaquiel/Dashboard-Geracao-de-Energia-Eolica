@@ -1,18 +1,19 @@
 <div class="main">
     <div class="image-container">
-        <img src="https://www.filemail.com/content/wp-content/uploads/send-high-quality-photos.jpg">
+        <img [src]="projectList.imageUrl">
     </div>
     <div class="title-project">
-        <h3>Gestor de Conteúdos LTI </h3>
+        <h3>{{projectList.name}}</h3>
     </div>
     <div class="tags-list">
-        <p>Angular</p>
-        <p>Typescript</p>
-        <p>Front-end</p>
-        <p>NestJs</p>
+        <p *ngFor="let item of projectList.tags" [style.background-color]="item.backgroundColor || '#8D9197'">
+            {{item.name}}
+        </p>
     </div>
     <div class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, fugiat optio repellat quam, quod nobis cupiditate nemo atque totam illo maiores nostrum id tempora esse consequatur. Nam dignissimos accusantium doloribus!</p>
+        <p>
+            {{projectList.description}}
+        </p>
     </div>
     <div class="buttons-container">
         <button class="outline">

@@ -1,0 +1,129 @@
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 6.4vw;
+
+    .left-content {
+        display: grid;
+        grid-template-columns: repeat(2, 0fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0.8vw;
+        grid-row-gap: 0.4vh;
+
+        img {
+            width: 15vw;
+            height: 18vh;
+            object-fit: cover;
+        }
+
+        .first-image {
+            grid-area: 1 / 1 / 5 / 2;
+
+            img {
+                width: 30vw;
+                height: 75vh;
+
+                border-radius: 1vw 0 0 1vw;
+            }
+        }
+
+        .second-image {
+            grid-area: 1 / 2 / 2 / 3;
+
+            img {
+                border-radius: 0 1vw 0 0;
+            }
+        }
+
+        .third-image {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+
+        .fourth-image {
+            grid-area: 3 / 2 / 4 / 3;
+        }
+
+        .fith-image {
+            grid-area: 4 / 2 / 5 / 3;
+
+            img {
+                border-radius: 0 0 1vw 0;
+            }
+        }
+    }
+
+    .right-content{
+        padding: 0 3.2vw;
+
+        .title-heading h1 {
+            text-transform: uppercase;
+            font-size: 2.8vw;
+            width: 35vw;
+
+            &::first-line{
+                color: var(--default-secondary-color);
+            }
+        }
+
+        .text-paragraph p{
+            color: var(--grey60);
+            font-size: 1vw;
+        }
+
+        .programming-languages {
+            margin-top: 1.8vw;
+
+            h3 {
+                color: var(--light-secondary-color);
+                font-size: 0.8vw
+            }
+
+            p {
+                font-size: 0.8vw;
+            }
+        }
+
+        .buttons-container {
+            display: flex;
+            align-items: center;
+
+            margin: 2.4vw 0;
+
+            gap: 0.8vw;
+
+            button {
+                border: none;
+                border-radius: 0.4vw;
+                padding: 0.8vw 2.4vw;
+
+                cursor: pointer;
+
+                font-family: 'Lexend', sans-serif;
+                font-size: 0.7vw;
+
+                &.filled {
+                    background: var(--light-secondary-color);
+
+                    a {
+                        color: #F2F2F2;
+                    }
+
+                    &:disabled {
+                        background: #DDDDDD;
+                        border: none;
+                        cursor: not-allowed;
+                    }
+                }
+
+                &.outline {
+                    background: none;
+                    border: 2px solid var(--light-secondary-color);
+
+                    a {
+                        color: var(--light-secondary-color);
+                    }
+                }
+            }
+        }
+    }
+}

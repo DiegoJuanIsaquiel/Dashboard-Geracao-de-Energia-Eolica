@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LanguagesEnum } from 'src/app/models/enum/languages.enum';
+import { ProjectProxy } from 'src/app/models/proxies/project.proxy';
 
 @Component({
   selector: 'app-project-card',
@@ -25,6 +26,9 @@ export class ProjectCardComponent {
   //#endregion
 
   //#region Public Properties
+
+  @Input()
+  public projectList!: ProjectProxy;
 
   public languagesEnum: typeof LanguagesEnum = LanguagesEnum
 
