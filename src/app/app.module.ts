@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { ChartModule } from 'angular-highcharts';
+import { HttpAsyncModule } from './modules/http-async/http-async.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    ChartModule,
+    HttpAsyncModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

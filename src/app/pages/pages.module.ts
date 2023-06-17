@@ -9,8 +9,6 @@ export const routes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'main', loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
-      { path: 'home/:language', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'project/:id/:language', loadChildren: () => import('./project-page/project-page.module').then(m => m.ProjectPageModule) },
       { path: '**', redirectTo: 'main' },
     ]
   },

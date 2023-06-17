@@ -1,16 +1,36 @@
-<div class="main">
-    <div class="title-heading" [style.flex-direction]="selectedLanguage === languagesEnum.ENGLISH ? 'column-reverse' : 'column'">
-        <h2 class="language-heading" [class.selected]="selectedLanguage === languagesEnum.PORTUGUESE">Qual seu idioma?</h2>
-        <h2 class="language-heading" [class.selected]="selectedLanguage === languagesEnum.ENGLISH">What's your language?</h2>
-    </div>
-    <div class="flags-container">
-        <a class="flag-item" (mouseover)="selectedLanguage = languagesEnum.ENGLISH" [routerLink]="'home/' + languagesEnum.ENGLISH">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/27_Star_US_Flag.svg" />
-            <p>English</p>
-        </a>
-        <div class="flag-item" (mouseover)="selectedLanguage = languagesEnum.PORTUGUESE" [routerLink]="'home/' + languagesEnum.PORTUGUESE">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" />
-            <p>Português</p>
+<main>
+    <div class="container">
+        <div class="maior-menor-media">
+            <div class="textos">
+                <span>Maior valor de corrente</span>
+                <span class="periodo">Nas últimas 24h</span>
+                <span class="values">{{highestValueRegistered}}mA</span>
+            </div>
+        </div>
+
+        <div class="maior-menor-media">
+
+            <div class="textos">
+                <span>Menor valor de corrente</span>
+                <span class="periodo">Nas últimas 24h</span>
+                <span class="values">{{lowestValueRegistered}}mA</span>
+            </div>
+        </div>
+
+        <div class="maior-menor-media">
+
+            <div class="textos">
+                <span>Média dos valores de corrente</span>
+                <span class="periodo">Nas últimas 24h</span>
+                <span class="values">{{averageOfValuesRegistered}}mA</span>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="graficos">
+
+        <div class="charts">
+            <div class="line" [chart]="lineChart"></div>
+        </div>
+    </div>
+</main>
