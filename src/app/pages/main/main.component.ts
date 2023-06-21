@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
 
   public averageOfValuesRegistered: number = 0;
 
-  public shouldGenerateValues: boolean = false;
+  public shouldGenerateValues: boolean = true;
 
   public fakeValuesCount: number = 0;
 
