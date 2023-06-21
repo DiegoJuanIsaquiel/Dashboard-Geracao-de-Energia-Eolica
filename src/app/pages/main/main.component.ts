@@ -36,6 +36,7 @@ export class MainComponent implements OnInit {
 
   public shouldGenerateValues: boolean = false;
 
+  public fakeValuesCount: number = 0;
 
   //#endregion
 
@@ -52,7 +53,7 @@ export class MainComponent implements OnInit {
 
       return this.generateFakeValues();
 
-    }, 1000);
+    }, 10000);
   }
 
   //#endregion
@@ -128,11 +129,15 @@ export class MainComponent implements OnInit {
   }
 
   public generateFakeValues(): void {
-    let fakeValue: number = Math.ceil(Math.random() * (24 - 12) + 12);
+    let fakeValue: number = Math.ceil(Math.random() * (104 - 134) + 134);
 
+    if(this.fakeValuesCount > 10)
+      fakeValue = 0;
+    
     this.chartOptions.addPoint(fakeValue);
     this.registerValuesList.push(fakeValue);
-
+    this.fakeValuesCount++;
+    
     if(this.registerValuesList.length > 45)
       this.chartOptions.removePoint(0)
 
